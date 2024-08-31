@@ -68,7 +68,7 @@ const StatCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    background-color:#1ee0c9;
+    background-color:#20e2cc;
   }
 `;
 
