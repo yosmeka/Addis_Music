@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDataStart } from '../reducers/musicSlice';
 import { ClipLoader } from 'react-spinners';
 import Card from '../components/card';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Adjust the import path
+import { primaryColor, backgroundColor, textColor } from '../constants/colors'; // Adjust the import path
 
 interface CoverImage {
   public_id: string;
