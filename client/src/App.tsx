@@ -16,7 +16,7 @@ import RegistrationPage from './pages/Register';
 import { fetchDataStart } from './reducers/musicSlice';
 import { verifyUserStart } from './reducers/authSlice';
 import axios from 'axios';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from './constants/colors'; // Import color constants
+import {backgroundColor } from './constants/colors'; // Import color constants
 
 
 const globalStyles = css`

@@ -7,7 +7,7 @@ import { parseISO } from 'date-fns';
 import { ClipLoader } from 'react-spinners';
 
 // Import color constants
-import { primaryColor, secondaryColor, backgroundColor, textColor } from '../constants/colors';
+import { primaryColor, backgroundColor, textColor } from '../constants/colors';
 
 interface GenreStats {
   genre: string;
@@ -60,7 +60,7 @@ interface MusicData {
   musicList: MusicListItem[];
 }
 
-const COLORS = [primaryColor, secondaryColor, '#FF0000', '#0000FF', '#FFA500', '#800080', '#FFC0CB', '#000000', '#FFFFFF', '#8B4513'];
+const COLORS = ['#FF0000', '#0000FF', '#FFA500', '#800080', '#FFC0CB', '#000000', '#FFFFFF', '#8B4513'];
 
 const PageContainer = styled.div`
   color: ${textColor};

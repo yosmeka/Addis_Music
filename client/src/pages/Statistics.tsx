@@ -200,10 +200,10 @@ const Statistics: React.FC = () => {
               outerRadius={80}
               label
             >
-              {musicData.albumStats.map((entry, index) => (
+              {musicData.albumStats.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
+                    ))}
+                               </Pie>
             <Tooltip contentStyle={{ backgroundColor: '#f7fafc', color: '#2D3748' }} />
             {/* <LegendContainer layout="vertical" verticalAlign="middle" align="right" onClick={handleLegendClick} /> */}
           </PieChart>
