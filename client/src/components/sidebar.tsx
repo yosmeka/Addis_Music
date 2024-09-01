@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { logout } from '../reducers/authSlice';
 import { RootState } from '../reducers/rootReducer';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Import color constants
+import { primaryColor, backgroundColor} from '../constants/colors'; // Import color constants
 
 
 interface SidebarItemContainerProps extends NavLinkProps {

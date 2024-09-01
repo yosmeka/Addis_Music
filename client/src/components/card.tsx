@@ -55,7 +55,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Import color constants
+import { primaryColor} from '../constants/colors'; // Import color constants
 
 
 

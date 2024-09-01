@@ -6,7 +6,7 @@ import Card from '../components/card';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Import color constants
+import { primaryColor, backgroundColor,  } from '../constants/colors'; // Import color constants
 
 
 interface CoverImage {

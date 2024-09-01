@@ -6,7 +6,7 @@ import { fetchDataStart } from '../reducers/musicSlice';
 import Card from '../components/card';
 import styled from '@emotion/styled';
 import { ClipLoader } from 'react-spinners';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Import color constants
+import { primaryColor, backgroundColor, textColor} from '../constants/colors'; // Import color constants
 
 // Container for the entire music page
 const MusicContainer = styled.div`
