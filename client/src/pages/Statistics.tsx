@@ -13,12 +13,11 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from 'recharts';
 import { parseISO } from 'date-fns';
-import { primaryColor, backgroundColor, textColor, secondaryColor } from '../constants/colors'; // Import color constants
+import { primaryColor, backgroundColor} from '../constants/colors'; // Import color constants
 
 
 const COLORS = ['#56CCF2', '#2F80ED', '#F2994A', '#F2C94C', '#6FCF97', '#BB6BD9', '#EB5757', '#27AE60', '#9B51E0'];
@@ -30,7 +29,7 @@ const PageContainer = styled.div`
   max-width: 1200px;
   margin: 20px auto;
   background-color: ${backgroundColor};
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 4px 12px rgba(23, 14, 14, 0.1); */
 `;
 
 const StyledHeader = styled.h1`
@@ -105,14 +104,14 @@ const Error = styled.div`
   text-align: center;
 `;
 
-const LegendContainer = styled(Legend)`
-  cursor: pointer;
+// const LegendContainer = styled(Legend)`
+//   cursor: pointer;
 
-  .recharts-legend-item:hover {
-    color: #2F80ED;
-    font-weight: bold;
-  }
-`;
+//   .recharts-legend-item:hover {
+//     color: #2F80ED;
+//     font-weight: bold;
+//   }
+// `;
 
 const Statistics: React.FC = () => {
   const musicData = useSelector((state: RootState) => state.music.data);
@@ -128,8 +127,8 @@ const Statistics: React.FC = () => {
     ).length,
   }));
 
-  const handleLegendClick = (event: any) => {
-  };
+  // const handleLegendClick = (event: any) => {
+  // };
 
   return (
     <PageContainer>
@@ -159,7 +158,7 @@ const Statistics: React.FC = () => {
             <XAxis dataKey="genre" />
             <YAxis />
             <Tooltip contentStyle={{ backgroundColor: '#f7fafc', color: '#2D3748' }} />
-            <LegendContainer onClick={handleLegendClick} />
+            {/* <LegendContainer onClick={handleLegendClick} /> */}
             <Bar dataKey="count" fill="#2F80ED" />
           </BarChart>
         </ResponsiveContainer>
@@ -183,7 +182,7 @@ const Statistics: React.FC = () => {
               ))}
             </Pie>
             <Tooltip contentStyle={{ backgroundColor: '#f7fafc', color: '#2D3748' }} />
-            <LegendContainer layout="vertical" verticalAlign="middle" align="right" onClick={handleLegendClick} />
+            {/* <LegendContainer layout="vertical" verticalAlign="middle" align="right" onClick={handleLegendClick} /> */}
           </PieChart>
         </ResponsiveContainer>
       </SectionContainer>
@@ -206,7 +205,7 @@ const Statistics: React.FC = () => {
               ))}
             </Pie>
             <Tooltip contentStyle={{ backgroundColor: '#f7fafc', color: '#2D3748' }} />
-            <LegendContainer layout="vertical" verticalAlign="middle" align="right" onClick={handleLegendClick} />
+            {/* <LegendContainer layout="vertical" verticalAlign="middle" align="right" onClick={handleLegendClick} /> */}
           </PieChart>
         </ResponsiveContainer>
       </SectionContainer>
@@ -218,7 +217,7 @@ const Statistics: React.FC = () => {
             <XAxis dataKey="date" type="category" scale="time" />
             <YAxis />
             <Tooltip contentStyle={{ backgroundColor: '#f7fafc', color: '#2D3748' }} />
-            <LegendContainer onClick={handleLegendClick} />
+            {/* <LegendContainer onClick={handleLegendClick} /> */}
             <Line type="monotone" dataKey="totalSongs" stroke="#2F80ED" />
           </LineChart>
         </ResponsiveContainer>
