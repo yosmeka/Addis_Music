@@ -3,11 +3,11 @@ https://github.com/user-attachments/assets/0cbc5de8-c27b-4916-a284-8fec1318faf0
 
 ## Overview
 
-This is a full-stack music management system developed using the MERN stack (MongoDB, ExpressJS, ReactJS, Node.js). The project is fully dockerized and deployed, with the frontend hosted on Netlify and the backend on Render. It features user registration, music creation and management, filtering by genre, and various music-related statistics.
+This is a full-stack music management system developed using the MERN stack (MongoDB, ExpressJS, ReactJS, Node.js). The project is fully dockerized and deployed, with the frontend hosted on vercel and the backend on Render. It features user registration, music creation and management, and various music-related statistics.
 
 ## Live Demo
 
-- **Frontend (vercel)**: [View the Application](https://your-netlify-site-url.netlify.app)
+- **Frontend (vercel)**: addis-music-ten.vercel.app
 ## Features
 
 - **User Registration**: Users can sign up, log in.
@@ -33,19 +33,32 @@ Before you begin, ensure you have the following installed:
 ## Installation
 
 ### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/your-project-name.git
-cd your-project-name
-  2 . Environment Variables
-# Example .env file
+https://github.com/yosmeka/Addis_Music.git
+### 2 Enviroment Variables
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret
 CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
 CLOUDINARY_API_KEY=your-cloudinary-api-key
 CLOUDINARY_API_SECRET=your-cloudinary-api-secret
-  3. Run with Docker
-cd your-project-name
+### 3 Run with Docker
+cd Addis_Music
+### 4 Build and run the Docker containers:
 docker-compose up --build
+## Run Locally (Without Docker)
+## Installation
+### 1  Install server dependencies:
+cd server
+npm install
+
+cd ../client
+npm start
+### 2 Start the backend server:
+cd server
+npm run dev
+### 3  Start the frontend server:
+cd ../client
+npm start
+
+
 
 
