@@ -136,7 +136,7 @@ const MyStat: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/music/clientwithstat/${id}`, { withCredentials: true });
+        const response = await axios.get(`https://addis-music-2.onrender.com/api/music/clientwithstat/${id}`, { withCredentials: true });
         setMusicData(response.data.data);
       } catch (error) {
         console.error('Error fetching music data:', error);
