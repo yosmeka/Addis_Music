@@ -113,7 +113,7 @@ const Home: React.FC = () => {
   if (loading) {
     return (
       <SpinnerContainer>
-        <ClipLoader color="#1d72b8" loading={loading} size={100} />
+        <ClipLoader color="#66eac0" loading={loading} size={100} />
       </SpinnerContainer>
     );
   }

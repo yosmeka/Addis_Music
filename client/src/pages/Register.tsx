@@ -94,7 +94,7 @@ const RegistrationPage: React.FC = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post('https://addis-music-2.onrender.com/api/auth/register', {
+      const response = await axios.post('https://addis-music-3.onrender.com/api/auth/register', {
         username,
         password,
         email,

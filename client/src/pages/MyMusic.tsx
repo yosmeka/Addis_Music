@@ -130,7 +130,7 @@ const MyMusic: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://addis-music-2.onrender.com/api/music/user/${id}`, { withCredentials: true });
+        const response = await axios.get(`https://addis-music-3.onrender.com/api/music/user/${id}`, { withCredentials: true });
         
         setMusicList(response.data.data);
       } catch (error) {
@@ -148,7 +148,7 @@ const MyMusic: React.FC = () => {
   };
 
   const closeUpdateModal = () => {
-    axios.get(`https://addis-music-2.onrender.com/api/music/user/${id}`, { withCredentials: true })
+    axios.get(`https://addis-music-3.onrender.com/api/music/user/${id}`, { withCredentials: true })
     .then(response => {
       setMusicList(response.data.data);
     })
@@ -184,7 +184,7 @@ const MyMusic: React.FC = () => {
         
         await new Promise(resolve => setTimeout(resolve, 4000));
         
-        const response = await axios.get(`https://addis-music-2.onrender.com/api/music/user/${id}`, {
+        const response = await axios.get(`https://addis-music-3.onrender.com/api/music/user/${id}`, {
           withCredentials: true
         });
     

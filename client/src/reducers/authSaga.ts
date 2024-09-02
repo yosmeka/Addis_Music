@@ -45,7 +45,7 @@ function* loginSaga(action: PayloadAction<YourLoginPayloadType>): Generator<any,
   try {
     const response: LoginResponseData = yield call(
       axios.post,
-      'https://addis-music-2.onrender.com/api/auth/login',
+      'https://addis-music-3.onrender.com/api/auth/login',
       action.payload
     );
     yield put(loginSuccess(response.data));
@@ -70,7 +70,7 @@ function isCustomError(obj: any): obj is CustomError {
 // Updated logoutSaga with proper typing
 function* logoutSaga(): Generator<any, void, void> {
   try {
-    yield call(axios.post, 'https://addis-music-2.onrender.com/api/auth/login', { withCredentials: true });
+    yield call(axios.post, 'https://addis-music-3.onrender.com/api/auth/login', { withCredentials: true });
     yield put(logout());
 
     document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
@@ -90,7 +90,7 @@ interface VerifyUserPayload {
 
 function* verifyUserSaga(action: PayloadAction<VerifyUserPayload>): Generator<any, void, any> {
   try {
-    const response = yield call(axios.get, `https://addis-music-2.onrender.com/api/auth/user/${action.payload._id}`, {
+    const response = yield call(axios.get, `https://addis-music-3.onrender.com/api/auth/user/${action.payload._id}`, {
       withCredentials: true,
     });
 
