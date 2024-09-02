@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PayloadAction } from '@reduxjs/toolkit';
 import { put, takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
@@ -16,7 +17,6 @@ import {
   deleteMusicFailure,
 } from './musicSlice';
 
-
 interface MusicFormData {
   _id: string; 
   title: string;
@@ -31,8 +31,8 @@ function* fetchDataSaga(): Generator<any, void, any> {
   try {
     const response = yield call(axios.get, 'http://localhost:5000/api/music/allwithstat');
     yield put(fetchDataSuccess(response.data.data));
-  } catch (error) {
-    yield put(fetchDataFailure(error));
+  } catch (error: any) { // Explicitly typed as any
+    yield put(fetchDataFailure(error.message)); // Use error.message or a default message
   }
 }
 
@@ -47,19 +47,19 @@ function* createMusicSaga(action: PayloadAction<{ musicData: MusicFormData; user
     });
     
     yield put(createMusicSuccess(response.data));
-  } catch (error) {
-    yield put(createMusicFailure(error));
+  } catch (error: any) { // Explicitly typed as any
+    yield put(createMusicFailure(error.message)); // Use error.message or a default message
   }
 }
 
 function* updateMusicSaga(action: PayloadAction<{ id: string; musicId: string; formData: MusicFormData }>): Generator<any, void, any> {
   try {
     const { id, musicId, formData } = action.payload;
-    const response = yield call(axios.put, `http://localhost:5000/api/music/${id}/${musicId}`, formData,{ withCredentials: true });
+    const response = yield call(axios.put, `http://localhost:5000/api/music/${id}/${musicId}`, formData, { withCredentials: true });
     
     yield put(updateMusicSuccess(response.data.data));
-  } catch (error) {
-    yield put(updateMusicFailure(error));
+  } catch (error: any) { // Explicitly typed as any
+    yield put(updateMusicFailure(error.message)); // Use error.message or a default message
   }
 }
 
@@ -69,8 +69,8 @@ function* deleteMusicSaga(action: PayloadAction<{ id: string; musicId: string }>
     yield call(axios.delete, `http://localhost:5000/api/music/${id}/${musicId}`, { withCredentials: true });
 
     yield put(deleteMusicSuccess(musicId));
-  } catch (error) {
-    yield put(deleteMusicFailure(error));
+  } catch (error: any) { // Explicitly typed as any
+    yield put(deleteMusicFailure(error.message)); // Use error.message or a default message
   }
 }
 
@@ -80,4 +80,3 @@ export function* watchMusic() {
   yield takeEvery(updateMusicStart.type, updateMusicSaga);
   yield takeEvery(deleteMusicStart.type, deleteMusicSaga);
 }
-
