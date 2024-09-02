@@ -214,7 +214,7 @@ const MyStat: React.FC = () => {
               outerRadius={80}
               label
             >
-              {musicData.artistStats.map((entry, index) => (
+              {musicData.artistStats.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
@@ -237,7 +237,7 @@ const MyStat: React.FC = () => {
               outerRadius={80}
               label
             >
-              {musicData.albumStats.map((entry, index) => (
+              {musicData.albumStats.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
