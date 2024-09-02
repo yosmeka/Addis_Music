@@ -23,9 +23,23 @@ export const register = async (req, res, next) => {
     });
 
     const savedUser = await newUser.save();
+// Automatically log in the user after registration
+const access_token = jwt.sign(
+  { id: savedUser._id, role: savedUser.role },
+  process.env.JWT  // Use the JWT secret key from environment variables
+);
 
-    res.status(201).json(createSuccess('User has been created.', savedUser));
-  } catch (err) {
+res.cookie("access_token", access_token, {
+  httpOnly: true,
+  path: '/',
+  secure: true,
+  sameSite: 'none',
+  expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+});
+
+// Redirect to the home page after successful registration and login
+res.status(201).json(createSuccess('User has been created and logged in.', { access_token, redirectUrl: '/' }));
+} catch (err) {
     next(err);
   }
 };
