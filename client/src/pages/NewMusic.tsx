@@ -8,48 +8,61 @@ import { RootState } from '../reducers/rootReducer';
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  background-color: transparent; /* Removed background color */
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #14b8a6;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 `;
 
 const StyledLabel = styled.label`
-  color: #05386B;
-  margin-bottom: 8px;
-  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
 `;
 
 const StyledInput = styled.input`
-  padding: 10px;
-  margin-bottom: 16px;
-  border-radius: 8px; /* Rounded the input field */
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
   font-size: 1em;
   width: 100%;
   box-sizing: border-box;
-  background-color: white; /* Set a background color */
-  border: 1px solid #05386B; /* Add a border */
-  color: #05386B; /* Text color */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #05386B;
+    outline: none;
+  }
 `;
 
 const StyledButton = styled.button<{ loading?: boolean }>`
-  background-color: #05386B;
+  background-color: ${(props) => (props.loading ? '#999' : '#05386B')};
   color: white;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: ${(props) => (props.loading ? 'not-allowed' : 'pointer')};
   font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 
+  &:hover {
+    background-color: ${(props) => !props.loading && '#5CDB95'};
+  }
+`;
 
 const ErrorMessage = styled.div`
   color: #ff0000;
-  font-size: 1em;
-  margin-top: 8px;
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 20px;
 `;
 
 const NewMusic = () => {
@@ -161,7 +174,6 @@ const NewMusic = () => {
           type="file"
           name="imageFile"
           onChange={handleFileChange}
-          placeholder="Choose cover image"
         />
       </StyledLabel>
       <StyledLabel>
@@ -170,15 +182,13 @@ const NewMusic = () => {
           type="file"
           name="audioFile"
           onChange={handleFileChange}
-          placeholder="Choose audio file"
         />
       </StyledLabel>
       
-      {error && <ErrorMessage>Error Try again</ErrorMessage>}
+      {error && <ErrorMessage>Error: Please try again</ErrorMessage>}
       
       <StyledButton type="submit" loading={loading}>
-        {loading && "Creating ..."}
-        {!loading && 'Create Music'}
+        {loading ? "Creating ..." : 'Create Music'}
       </StyledButton>
     </StyledForm>
   );

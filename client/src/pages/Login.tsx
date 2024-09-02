@@ -13,6 +13,14 @@ const LoginPageContainer = styled.div`
   height: 100vh;
   padding: 0 20px;
   background: linear-gradient(to bottom right, #05386B, #5CDB95); /* Gradient background */
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 5px;
+  }
 `;
 
 const LoginForm = styled.form`
@@ -23,6 +31,10 @@ const LoginForm = styled.form`
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 const FormLabel = styled.label`
@@ -30,6 +42,10 @@ const FormLabel = styled.label`
   margin-bottom: 8px;
   font-size: 1.2rem;
   color: #05386B;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const FormInput = styled.input`
@@ -45,6 +61,11 @@ const FormInput = styled.input`
   &:focus {
     border-color: #5CDB95;
     outline: none;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    font-size: 0.9rem;
   }
 `;
 
@@ -62,6 +83,11 @@ const FormButton = styled.button<{ loading?: boolean }>`
   &:hover:not([disabled]) {
     background-color: #379683;
   }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    font-size: 1rem;
+  }
 `;
 
 const ErrorMessage = styled.div`
@@ -70,6 +96,10 @@ const ErrorMessage = styled.div`
   font-size: 0.9rem;
   text-align: left;
   animation: fadeIn 0.5s;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 
   @keyframes fadeIn {
     from {
@@ -86,6 +116,10 @@ const RegisterLink = styled.div`
   text-align: center;
   font-size: 1rem;
   color: #05386B;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const RegisterHere = styled.span`

@@ -113,11 +113,17 @@ const PageNumber = styled.span<{ isActive: boolean }>`
 `;
 
 const Error = styled.div`
-  color: #05386B; 
-  padding: 30px;
+  color: #14b8a6; 
+  padding: 20px;
   margin: 20px 0; 
-  font-size: 20em;
+  font-size: 1.5rem; 
+  text-align: center; 
+  /* border: 1px solid #05386B;  */
+  border-radius: 8px; 
+  background-color: #038173; /* Light background color */
+  width: 100%; /* Take the full width of the container */
 `;
+
 
 const MyMusic: React.FC = () => {
   const dispatch = useDispatch();

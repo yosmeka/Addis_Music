@@ -37,15 +37,23 @@ const MainContainer = styled.div`
   flex: 1;
   padding-bottom: 40px;
   background-color: ${backgroundColor};
-`;
+  padding: 20px;
 
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+`;
 
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
-  padding: 20px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Header = styled.div`
@@ -53,12 +61,21 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   color: #333;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ShowAllLink = styled(Link)`
@@ -66,17 +83,25 @@ const ShowAllLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2rem;
-  font-weight: 500; /* Adjusted to ensure visibility */
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Ensure smooth transitions */
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 
   &:hover {
     text-decoration: underline;
-    color: ${primaryColor}CC; /* Slightly lighter color on hover */
+    color: ${primaryColor}CC;
   }
 
   &:focus {
-    outline: 2px solid ${primaryColor}; /* Ensure focus visibility */
+    outline: 2px solid ${primaryColor};
     outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -89,6 +114,12 @@ const CardsContainer = styled.div`
 
   @media (max-width: 768px) {
     justify-content: center;
+    gap: 15px;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    gap: 10px;
   }
 `;
 
@@ -98,6 +129,14 @@ const Error = styled.div`
   margin: 20px 0;
   font-size: 1.5rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const SpinnerContainer = styled.div`
@@ -106,7 +145,6 @@ const SpinnerContainer = styled.div`
   align-items: center;
   height: 100vh;
 `;
-
 const Home: React.FC = () => {
   const { data, loading, error } = useSelector((state: RootState) => state.music);
 
@@ -155,10 +193,10 @@ const Home: React.FC = () => {
         </CardsContainer>
       </HomeContainer>
       <HomeContainer>
-        {/* <Header>
-          <Title>Randomly Chosen Music</Title>
+        <Header>
+          <Title>Related Music</Title>
           <ShowAllLink to="/music">Show All</ShowAllLink>
-        </Header> */}
+        </Header>
         <CardsContainer>
           {randomlyChosenMusic.map((item) => (
             <Card
