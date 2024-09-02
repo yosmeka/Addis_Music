@@ -7,7 +7,7 @@ This is a full-stack music management system developed using the MERN stack (Mon
 
 ## Live Demo
 
-- **Frontend (vercel)**: addis-music-ten.vercel.app
+- **Frontend (vercel)**: [Addis Music](https://addis-music-ten.vercel.app)
 ## Features
 
 - **User Registration**: Users can sign up, log in.
@@ -47,23 +47,31 @@ CLOUDINARY_API_SECRET=your-cloudinary-api-secret
 ### 3 Run with Docker
 ~~~
 cd Addis_Music
+~~~
 ### 4 Build and run the Docker containers:
+~~~
 docker-compose up --build
+~~~
 ## Run Locally (Without Docker)
 ## Installation
 ### 1  Install server dependencies:
+~~~
 cd server
 npm install
 
 cd ../client
 npm start
+~~~
 ### 2 Start the backend server:
+~~~
 cd server
 npm run dev
+~~~
 ### 3  Start the frontend server:
+~~~
 cd ../client
 npm start
-
+~~~
 
 
 
