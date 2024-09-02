@@ -33,14 +33,19 @@ Before you begin, ensure you have the following installed:
 ## Installation
 
 ### 1. Clone the Repository
+```BASH
 https://github.com/yosmeka/Addis_Music.git
+```
 ### 2 Enviroment Variables
+~~~
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret
 CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
 CLOUDINARY_API_KEY=your-cloudinary-api-key
 CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+~~~
 ### 3 Run with Docker
+~~~
 cd Addis_Music
 ### 4 Build and run the Docker containers:
 docker-compose up --build
