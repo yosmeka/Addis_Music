@@ -155,10 +155,10 @@ const Home: React.FC = () => {
         </CardsContainer>
       </HomeContainer>
       <HomeContainer>
-        <Header>
+        {/* <Header>
           <Title>Randomly Chosen Music</Title>
           <ShowAllLink to="/music">Show All</ShowAllLink>
-        </Header>
+        </Header> */}
         <CardsContainer>
           {randomlyChosenMusic.map((item) => (
             <Card

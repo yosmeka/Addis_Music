@@ -177,7 +177,7 @@ const Statistics: React.FC = () => {
               outerRadius={80}
               label
             >
-              {musicData.artistStats.map((entry, index) => (
+              {musicData.artistStats.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>

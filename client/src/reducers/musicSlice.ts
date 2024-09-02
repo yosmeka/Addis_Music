@@ -85,15 +85,13 @@ const musicSlice = createSlice({
       state.loading = true;
       state.error = null;
       console.log(action.payload);
-      
     },
-    createMusicSuccess: (state, action) => {
+    createMusicSuccess: (state, action: PayloadAction<{ data: MusicListItem }>) => {
       state.loading = false;
       state.error = null;
-      
       if (action.payload && action.payload.data) {
-        state.data!.musicList.push(action.payload.data);
-        state.data!.totalSongs = (state.data!.totalSongs || 0) + 1;
+        state.data?.musicList.push(action.payload.data);
+        state.data!.totalSongs += 1;
       }
     },
     createMusicFailure: (state, action: PayloadAction<string>) => {
@@ -110,8 +108,8 @@ const musicSlice = createSlice({
     },
     updateMusicSuccess: (state, action: PayloadAction<MusicListItem>) => {
       state.loading = false;
-      const updatedIndex = state.data!.musicList.findIndex(item => item._id === action.payload._id);
-      if (updatedIndex !== -1) {
+      const updatedIndex = state.data?.musicList.findIndex(item => item._id === action.payload._id);
+      if (updatedIndex !== undefined && updatedIndex !== -1) {
         state.data!.musicList[updatedIndex] = action.payload;
       }
     },
@@ -123,7 +121,6 @@ const musicSlice = createSlice({
       state.loading = true;
       state.error = null;
       console.log(action.payload);
-      
     },
     deleteMusicSuccess: (state, action: PayloadAction<string>) => {
       state.loading = false;

@@ -64,7 +64,7 @@ const App: React.FC = () => {
       
       dispatch(verifyUserStart({ _id}));
     }
-  }, [dispatch]);
+  }, [_id, dispatch]);
 
   useEffect(() => {
     dispatch(fetchDataStart());
